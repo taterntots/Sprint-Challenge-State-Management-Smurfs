@@ -27,7 +27,7 @@ export const addSmurfs = (data) => dispatch => {
         .post('http://localhost:3333/smurfs', data)
         .then(res => {
             console.log(res);
-            dispatch({ type: ADD_SMURF_SUCCESS, payload: res });
+            dispatch({ type: ADD_SMURF_SUCCESS, payload: data });
         })
         .catch(err => {
             console.log(err);
