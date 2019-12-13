@@ -8,6 +8,7 @@ const SmurfForm = (props) => {
         height: '',
         id: Date.now()
     })
+    // console.log(newSmurf);
 
     const handleChanges = (event) => {
         setNewSmurf({ ...newSmurf, [event.target.name]: event.target.value })
@@ -22,8 +23,8 @@ const SmurfForm = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input name='name' type='text' placeholder='name' onChange={handleChanges} />
-                <input age='age' type='text' placeholder='age' onChange={handleChanges} />
-                <input height='height' type='text' placeholder='height' onChange={handleChanges} />
+                <input name='age' type='text' placeholder='age' onChange={handleChanges} />
+                <input name='height' type='text' placeholder='height' onChange={handleChanges} />
                 <button type='submit'>Submit</button>
             </form>
         </div>

@@ -24,13 +24,7 @@ const initialState = {
     ],
     isFetching: false,
     isPosting: false,
-    error: '',
-    newSmurf: {
-        name: '',
-        age: '',
-        height: '',
-        id: ''
-    }
+    error: ''
 }
 
 const reducer = (state = initialState, action) => {
