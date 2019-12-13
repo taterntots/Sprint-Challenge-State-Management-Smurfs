@@ -1,5 +1,5 @@
 const initialState = {
-    smurfs: [],
+    smurfs: ['testSmurf'],
     isFetching: true,
     error: ''
 }
