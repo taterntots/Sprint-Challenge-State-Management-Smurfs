@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { getSmurfs } from '../actions'
 
 const SmurfList = (props) => {
     console.log(props);
@@ -10,6 +11,7 @@ const SmurfList = (props) => {
                     <p>{s.name}</p>
                 </div>
             )}
+            <button onClick={() => props.getSmurfs()}>Get Smurfs</button>
         </div>
     )
 }
@@ -22,4 +24,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {}) (SmurfList);
+export default connect(mapStateToProps, { getSmurfs }) (SmurfList);

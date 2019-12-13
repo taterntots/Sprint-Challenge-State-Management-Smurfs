@@ -1,3 +1,5 @@
+import { FETCH_SMURF_START } from '../actions';
+
 const initialState = {
     smurfs: [
         {
@@ -19,6 +21,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCH_SMURF_START:
+            return {
+                ...state,
+                isFetching: false,
+            }
         default:
             return state;
     }
