@@ -4,7 +4,13 @@ import { connect } from 'react-redux'
 const SmurfList = (props) => {
     console.log(props);
     return (
-        <p>some data</p>
+        <div>
+            {props.smurfs.map(s =>
+                <div key={s.id}>
+                    <p>{s.name}</p>
+                </div>
+            )}
+        </div>
     )
 }
 
