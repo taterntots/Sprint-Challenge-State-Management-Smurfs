@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SmurfForm = (props) => {
-    console.log(props);
+    // console.log(props);
     const [newSmurf, setNewSmurf] = useState({
         name: '',
         age: '',
@@ -15,7 +15,7 @@ const SmurfForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.addSmurf(newSmurf);
+        props.addSmurfs(newSmurf);
     }
 
     return (

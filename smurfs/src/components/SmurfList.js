@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getSmurfs } from '../actions'
+import { getSmurfs, addSmurfs } from '../actions'
 import SmurfForm from './SmurfForm';
 
 const SmurfList = (props) => {
@@ -15,7 +15,7 @@ const SmurfList = (props) => {
                 </div>
             )}
             <button onClick={() => props.getSmurfs()}>Get Smurfs</button>
-            <SmurfForm />
+            <SmurfForm addSmurfs={props.addSmurfs} />
         </div>
     )
 }
@@ -28,4 +28,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getSmurfs }) (SmurfList);
+export default connect(mapStateToProps, { getSmurfs, addSmurfs }) (SmurfList);
