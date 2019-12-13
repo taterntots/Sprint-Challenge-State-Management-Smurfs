@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getSmurfs, addSmurfs } from '../actions'
+import { getSmurfs, addSmurfs, deleteSmurfs } from '../actions'
 import SmurfForm from './SmurfForm';
 import styled from 'styled-components';
 
@@ -24,6 +24,11 @@ const SmurfList = (props) => {
         props.getSmurfs();
     }, [])
 
+    // const handleDelete = (event) => {
+    //     event.preventDefault();
+    //     props.deleteSmurfs();
+    // }
+
     return (
         <div>
             {/* <button onClick={() => props.getSmurfs()}>Get Smurfs</button> */}
@@ -34,6 +39,7 @@ const SmurfList = (props) => {
                         <p>{s.name}</p>
                         <p>Age: {s.age}</p>
                         <p>Height: {s.height}</p>
+                        <button onClick={() => props.deleteSmurfs(s.id)}>Delete</button>
                     </div>
                 )}
             </GridStyle>
@@ -49,4 +55,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getSmurfs, addSmurfs }) (SmurfList);
+export default connect(mapStateToProps, { getSmurfs, addSmurfs, deleteSmurfs }) (SmurfList);
